@@ -1,13 +1,15 @@
 FastAlchemy
 ===========
 
+[![codecov](https://codecov.io/gh/cloudeyes/fastalchemy/branch/master/graph/badge.svg)](https://codecov.io/gh/cloudeyes/fastalchemy)
+
 SQLAlchemy Middleware for [FastAPI](http://github.com/tiangolo/fastapi) inspired by the [official tutorial](https://fastap.tiangolo.com/tutorial/sql-databases).
 
 
 Features
 --------
 
-- Super-easy configuration: Just read put `database.py` and `models.py` in your project folder with the following code.
+- Super-easy configuration: simply put `database.py` and `models.py` files in your project folder with the following code.
 
 ```python
 from fastapi import FastAPI
