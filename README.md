@@ -1,6 +1,7 @@
 FastAlchemy
 ===========
 
+[![Build Status](https://travis-ci.com/cloudeyes/fastalchemy.svg?branch=master)](https://travis-ci.com/cloudeyes/fastalchemy)
 [![codecov](https://codecov.io/gh/cloudeyes/fastalchemy/branch/master/graph/badge.svg)](https://codecov.io/gh/cloudeyes/fastalchemy)
 
 SQLAlchemy Middleware for [FastAPI](http://github.com/tiangolo/fastapi) inspired by the [official tutorial](https://fastap.tiangolo.com/tutorial/sql-databases).

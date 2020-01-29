@@ -1,5 +1,6 @@
 codecov
 fastapi
 pytest
+pytest-cov
 starlette
 sqlalchemy
