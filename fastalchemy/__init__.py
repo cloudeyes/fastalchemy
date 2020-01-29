@@ -28,7 +28,9 @@ class SessionInitializationError(Exception):
 
 
 class SQLAlchemyMiddleware(BaseHTTPMiddleware):
-    def __init__(self, app: ASGIApp, db_module: Union[types.ModuleType, str]='database'):
+    def __init__(self, app: ASGIApp, 
+            db_module: Union[types.ModuleType, str]='database',
+            models_module: Union[types.ModuleType, str]='models'):
         global _Session
         global database
 
@@ -39,6 +41,12 @@ class SQLAlchemyMiddleware(BaseHTTPMiddleware):
         else:
             database = db_module
 
+        if type(models_module) == str:
+            models = importlib.import_module(models_module)
+        else:
+            models = models_module
+
+        database.Base.metadata.create_all(bind=database.engine)
         _Session = sessionmaker(bind=database.engine)
 
 
@@ -63,9 +71,6 @@ class DBSessionMeta(type):
 
     def commit(self):
         self.get_session().commit()
-
-    def create_all(self):
-        database.Base.metadata.create_all(bind=database.engine)
 
     def truncate_all(self):
         meta = database.Base.metadata

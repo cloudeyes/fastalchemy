@@ -4,10 +4,8 @@ from fastalchemy import SQLAlchemyMiddleware, db
 app = FastAPI()
 app.add_middleware(SQLAlchemyMiddleware)
 
-from models import User, Base
+from models import User
 import schemas
-
-db.create_all()
 
 @app.post('/users', response_model=schemas.User)
 def create_user(user: schemas.UserCreate):
