@@ -1,2 +1,2 @@
-starlette
+starlette==0.12.9
 sqlalchemy
