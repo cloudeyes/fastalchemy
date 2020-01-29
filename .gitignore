@@ -1,6 +1,9 @@
+__pycache__
 .coverage
 .pytest_cache
-coverage.xml
-codecov.sh
 *.db
-__pycache__
+*.egg-info/
+codecov.sh
+coverage.xml
+dist/
+MANIFEST
