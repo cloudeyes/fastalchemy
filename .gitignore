@@ -1,0 +1,5 @@
+.coverage
+coverage.xml
+codecov.sh
+*.db
+__pycache__
