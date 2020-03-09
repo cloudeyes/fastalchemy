@@ -2,5 +2,5 @@ codecov
 fastapi
 pytest
 pytest-cov
-starlette==0.12.9
-sqlalchemy
+starlette>=0.13.0
+sqlalchemy>=0.52.0
