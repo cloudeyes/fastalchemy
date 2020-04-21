@@ -21,7 +21,7 @@ Features
 
 ```python
 from fastapi import FastAPI
-from fastalchemy import SQLAlchemyMiddlware, db
+from fastalchemy import SQLAlchemyMiddleware, db
 
 from models import User
 
