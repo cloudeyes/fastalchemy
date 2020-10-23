@@ -11,7 +11,7 @@ Install
 --------
 
 ```
-pip install fastapi
+pip install fastapi fastalchemy
 ```
 
 Features
