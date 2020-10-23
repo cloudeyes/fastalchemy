@@ -7,7 +7,7 @@ with open(path.join(this_dir, 'README.md')) as f:
 setup(
     name='fastalchemy',
     packages=['fastalchemy'],
-    version='0.1.3',
+    version='0.1.2',
     license='MIT',
     description='A SQLAlchemy middleware for FastAPI',
     long_description=long_description,
@@ -15,7 +15,7 @@ setup(
     author='Joseph Kim',
     author_email='cloudeyes@gmail.com',
     url='https://github.com/cloudeyes/fastalchemy',
-    download_url='https://github.com/cloudeyes/fastalchemy/archive/v0.1.3.tar.gz',
+    download_url='https://github.com/cloudeyes/fastalchemy/archive/v0.1.2.tar.gz',
     keywords=['fastapi', 'middleware', 'sqlalchemy', 'plugin'],
     install_requires=[
         'fastapi', 'sqlalchemy',
