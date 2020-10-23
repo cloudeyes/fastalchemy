@@ -8,7 +8,8 @@ from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoin
 from starlette.types import ASGIApp
 from starlette.requests import Request
 
-from sqlalchemy.orm import Session, Query, sessionmaker
+from sqlalchemy.orm import Session, Query, sessionmaker, class_mapper
+from sqlalchemy.orm.exc import UnmappedClassError
 from sqlalchemy.engine import Engine
 from sqlalchemy.ext.declarative import DeclarativeMeta
 import sqlalchemy
@@ -48,6 +49,17 @@ class SQLAlchemyMiddleware(BaseHTTPMiddleware):
 
         database.Base.metadata.create_all(bind=database.engine)
         _Session = sessionmaker(bind=database.engine)
+
+        # For support graphene-sqlalchemy
+        class query:
+            def __get__(s, instance, owner):
+                try:
+                    mapper = class_mapper(owner)
+                    if mapper:
+                        return db.query(mapper)
+                except UnmappedClassError:
+                    return None
+        database.Base.query = query()
 
 
     async def dispatch(self, request: Request, call_next: RequestResponseEndpoint):
